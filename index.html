@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Now</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <span class="icon">☀️</span>
+                <h1>Weather Now</h1>
+            </div>
+            <div class="units-toggle">
+                <select>
+                    <option value="celsius">°C</option>
+                    <option value="fahrenheit">°F</option>
+                </select>
+            </div>
+        </header>
+
+        <section class="search-section">
+            <h2>How's the sky looking today?</h2>
+            <div class="search-box">
+                <input type="text" placeholder="Search for a place..." id="searchInput">
+                <button id="searchBtn">Search</button>
+            </div>
+        </section>
+
+        <main class="weather-dashboard">
+            <div class="left-panel">
+                <div class="main-card">
+                    <div class="location-info">
+                        <h3>Loading...</h3>
+                        <p>Date Loading...</p>
+                    </div>
+                    <div class="temp-info">
+                        <span class="weather-icon">☀️</span>
+                        <h1 class="temperature">--°</h1>
+                    </div>
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <span class="label">Feels Like</span>
+                        <span class="value" id="feelsLike">--°</span>
+                    </div>
+                    <div class="detail-card">
+                        <span class="label">Humidity</span>
+                        <span class="value" id="humidity">--%</span>
+                    </div>
+                    <div class="detail-card">
+                        <span class="label">Wind</span>
+                        <span class="value" id="windSpeed">-- km/h</span>
+                    </div>
+                    <div class="detail-card">
+                        <span class="label">Precipitation</span>
+                        <span class="value">0 mm</span>
+                    </div>
+                </div>
+
+                <div class="daily-forecast">
+                    <p class="section-title">Daily forecast</p>
+                    <div class="days-container" id="dailyForecast">
+                        </div>
+                </div>
+            </div>
+
+            <aside class="right-panel">
+                <div class="hourly-forecast">
+                    <div class="hourly-header">
+                        <p class="section-title">Hourly forecast</p>
+                        <select class="day-selector" id="hourlyDaySelect">
+                            <option>Today</option>
+                        </select>
+                    </div>
+                    <div class="hours-list" id="hourlyForecast">
+                        </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

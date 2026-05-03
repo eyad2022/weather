@@ -1,0 +1,244 @@
+/* الألوان والمتغيرات */
+:root {
+    --bg-dark: #0A0E17;
+    --card-bg: #1A1D2D;
+    --card-bg-hover: #23273A;
+    --text-main: #FFFFFF;
+    --text-muted: #A0A4B8;
+    --primary-blue: #4F46E5;
+    --gradient-card: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+    --radius-lg: 20px;
+    --radius-md: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* التوسيط والتخطيط الرئيسي */
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 2200px;
+    background-color: #0d111d;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* الشريط العلوي */
+.header {
+    display: flex;
+    justify-content: space-between; /* الحفاظ على مسافة بين العناصر */
+    align-items: center;
+    margin-bottom: 2rem;
+    background: transparent; /* إزالة أي تأثيرات ضبابية */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo h1 { font-size: 1.2rem; }
+
+.units-toggle select {
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    border: none;
+    padding: 8px 12px;
+    border-radius: var(--radius-md);
+    outline: none;
+    cursor: pointer;
+}
+
+/* قسم البحث */
+.search-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.search-section h2 {
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 14px 20px;
+    border-radius: 30px; 
+    border: none;
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    outline: none;
+}
+
+.search-box button {
+    padding: 14px 30px;
+    border-radius: 30px;
+    border: none;
+    background-color: var(--primary-blue);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.search-box button:hover { background-color: #635bff; }
+
+/* لوحة التخطيط والشبكة */
+.weather-dashboard {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.main-card {
+    background: var(--gradient-card);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.location-info h3 { font-size: 1.5rem; margin-bottom: 5px; }
+.location-info p { color: rgba(255, 255, 255, 0.8); }
+
+.temp-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.temp-info .weather-icon { font-size: 3rem; }
+.temperature { font-size: 5rem; font-weight: bold; }
+
+/* التفاصيل الصغيرة */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.detail-card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.detail-card .label { color: var(--text-muted); font-size: 0.9rem; }
+.detail-card .value { font-size: 1.2rem; font-weight: bold; }
+
+/* الأيام القادمة */
+.daily-forecast .section-title { margin-bottom: 1rem; font-weight: 600; color: var(--text-muted); }
+
+.days-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.day-card {
+    background-color: var(--card-bg-hover);
+    border-radius: var(--radius-md);
+    padding: 1.2rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.day-card .day-name { font-size: 1rem; font-weight: 500; }
+.day-card .weather-icon { font-size: 2rem; }
+.day-card .day-temps { display: flex; gap: 12px; font-size: 0.95rem; }
+.day-card .max-temp { font-weight: bold; }
+.day-card .min-temp { color: var(--text-muted); }
+
+/* توقعات الساعات */
+.hourly-forecast {
+    background-color: var(--card-bg);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    height: 100%;
+}
+
+.hourly-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.hourly-header .section-title { color: var(--text-muted); font-weight: 600; }
+.day-selector { background-color: transparent; color: var(--text-main); border: none; outline: none; }
+
+.hours-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hour-item-card {
+    background-color: var(--card-bg-hover);
+    border-radius: var(--radius-md);
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hour-info { display: flex; align-items: center; gap: 20px; font-size: 1.1rem; font-weight: 500; }
+.hour-item-card .temp { font-size: 1.2rem; font-weight: bold; }
+
+/* التجاوب مع الهواتف الذكية */
+@media (max-width: 900px) {
+    body {
+        align-items: flex-start;
+        padding: 1rem;
+    }
+    
+    /* ضمان تجاوب الهيدر */
+    .header {
+        flex-direction: row;
+    }
+
+    .container { padding: 1.5rem 1rem; }
+    .weather-dashboard { grid-template-columns: 1fr; }
+    .main-card { flex-direction: column; text-align: center; gap: 20px; }
+    .details-grid { grid-template-columns: repeat(2, 1fr); }
+    .search-box { flex-direction: column; }
+    .search-box input, .search-box button { max-width: 100%; width: 100%; }
+}
+
+@media (max-width: 400px) {
+    .days-container { grid-template-columns: repeat(2, 1fr); }
+    .header { flex-direction: column; gap: 15px; } /* ترتيب الهيدر للشاشات الضيقة جداً */
+}
